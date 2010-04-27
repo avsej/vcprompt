@@ -150,10 +150,10 @@ vccontext_t* probe_parents(vccontext_t** contexts, int num_contexts)
 int main(int argc, char** argv)
 {
     options_t options = { 0,            /* debug */
-                          "[%n:%b%m%u] ",  /* format string */
-                          0,            /* show branch */
-                          0,            /* show unknown */
-                          0,            /* show local changes */
+                          "[%n:%b%r%m%u] ",  /* format string */
+                          1,            /* show branch */
+                          1,            /* show unknown */
+                          1,            /* show local changes */
     };
 
     parse_args(argc, argv, &options);
