@@ -29,7 +29,9 @@ git_get_info(vccontext_t* context)
         }
         else {
             debug(".git/HEAD doesn't look like a head ref: unknown branch");
-            result->branch = "(unknown)";
+            result->branch = malloc(sizeof(char) * 9);
+            strncpy(result->branch, buf, 8);
+            result->branch[8] = '\0';
         }
     }
 
