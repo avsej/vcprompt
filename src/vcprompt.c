@@ -9,9 +9,7 @@
 #include "git.h"
 #include "hg.h"
 #include "svn.h"
-/*
 #include "bzr.h"
-*/
 
 void parse_args(int argc, char** argv, options_t* options)
 {
@@ -165,6 +163,7 @@ int main(int argc, char** argv)
         get_git_context(&options),
         get_hg_context(&options),
         get_svn_context(&options),
+        get_bzr_context(&options),
     };
     int num_contexts = sizeof(contexts) / sizeof(vccontext_t*);
 
